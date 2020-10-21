@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Funny circles</title>
+</head>
+<body>
+<canvas id="myCanvas" width="1368" height="768" style="border:1px solid #d3d3d3"></canvas>
+<script>
+    class Circle {
+        constructor(x, y, radius) {
+            this.x = x;
+            this.y = y;
+            this.radius = radius;
+        }
+        getRandomHex(){
+            return Math.floor(Math.random()*255);
+        }
+        getRandomColor(){
+            let red = this.getRandomHex();
+            let blue = this.getRandomHex();
+            let green = this.getRandomHex();
+            return `rgb(${red},${blue},${green})`;
+        }
+    }
+    // function createCirlce() {
+    //     let c = document.getElementById("myCanvas")
+    //     let ctx = c.getContext("2d");
+    //     let radius = Math.floor(Math.random()*25 + 10)
+    //     let circle = new Circle(Math.floor(Math.random()*1368),0,radius);
+    //     let color = circle.getRandomColor();
+    //     ctx.beginPath();
+    //     ctx.clearRect(0, 0, c.width, c.height);
+    //     ctx.arc(circle.x, circle.y, circle.radius, 0, 2 * Math.PI);
+    //     ctx.fillStyle = color;
+    //     ctx.fill();
+    //
+    // }
+
+    //window.requestAnimationFrame(createCirlce);
+    function createCirlce() {
+        let c = document.getElementById("myCanvas")
+        let ctx = c.getContext("2d");
+        //ctx.clearRect(0, 0, c.width, c.height);
+        let radius = Math.floor(Math.random()*90 + 10)
+        let circle = new Circle(500,500,radius);
+        let color = circle.getRandomColor();
+        ctx.beginPath();
+        ctx.arc(Math.floor(Math.random()*1268),Math.floor(Math.random()*668), circle.radius, 0, 2*Math.PI);
+        ctx.fillStyle = color;
+        ctx.fill();
+
+    }
+    setInterval(createCirlce,1000);
+    //createCirlce();
+</script>
+</body>
+</html>

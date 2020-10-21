@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Temperature</title>
+</head>
+<body>
+<script>
+    class Temperature {
+        constructor(_c) {
+            this.c = _c;
+        }
+        getF(){
+            return 9/5 * this.c + 32;
+        }
+        getK(){
+            return this.c - 273;
+        }
+    }
+    let nhietDo = new Temperature(25);
+    console.log(nhietDo.getF() + " " + nhietDo.getK());
+</script>
+</body>
+</html>
